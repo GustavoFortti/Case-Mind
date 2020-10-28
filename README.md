@@ -11,37 +11,42 @@ Este serviço é dividido em duas partes, usuário administrador e usuário padr
 ### Back-end
 
 	cd server/ | npm install
-	 yarn start
+	yarn start
 
 - Criar usuário.
-	routes.post('/user', upload.single('path'), UserController.create);
+
+		routes.post('/user', upload.single('path'), UserController.create);
 - Autenticação do usuário.
-	routes.post('/user/auth', UserController.authenticate);
 
+		routes.post('/user/auth', UserController.authenticate);
 - Listar usuários.
-	routes.get('/user/adm', UserAdmController.index);
-- Mostrar usuário.
-	routes.get('/user/:id', UserController.show);
 
+		routes.get('/user/adm', UserAdmController.index);
+- Mostrar usuário.
+
+		routes.get('/user/:id', UserController.show);
 - Atualizar usuário.
-	routes.put('/user/:id', UserController.alter);
+	
+		routes.put('/user/:id', UserController.alter);
 - Alterar nivel do usuário ( usuário padrão: 1 - usuário administrador: 999 - usuário desabilitado: 0).
-	routes.put('/user/adm/:id', UserAdmController.alter);
+
+		routes.put('/user/adm/:id', UserAdmController.alter);
 - Altear entre online e ofline (0 e 1).
-	routes.put('/user/online/:id', UserController.online);
+	
+		routes.put('/user/online/:id', UserController.online);
 
 ##### Banco de dados
 
 	Tabela: users {
-						id: int
-						name: string
-						cpf: string
-						email: string
-						password: string
-						online: string
-						level: string
-						path: string
-					}
+			id: int
+			name: string
+			cpf: string
+			email: string
+			password: string
+			online: string
+			level: string
+			path: string
+		}		
 
 
 
