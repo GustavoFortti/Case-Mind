@@ -1,6 +1,6 @@
-# Sistema CRUD - gerenciador de usuários
+# Sistema CRUD - Gerenciador de Usuários
 
-Este serviço é dividido em duas partes, usuário administrador e usuário padrão, o deshbord do usuario padãro possui a função de informação sobre o usuario e sua edição, já o usuário administrador pode visualizar todos os usuários cadastrados e edição deles.
+Este serviço é dividido em duas partes, usuário administrador e usuário padrão, o deshbord do usuario padãro possui a função de informação sobre o usuario e sua edição, já o usuário administrador pode visualizar e editar todos os usuários cadastrados.
 
 ### Front-end
 
@@ -31,7 +31,7 @@ Este serviço é dividido em duas partes, usuário administrador e usuário padr
 - Alterar nivel do usuário ( usuário padrão: 1 - usuário administrador: 999 - usuário desabilitado: 0).
 
 		routes.put('/user/adm/:id', UserAdmController.alter);
-- Altear entre online e ofline (0 e 1).
+- Alterar entre online e ofline (0 e 1).
 	
 		routes.put('/user/online/:id', UserController.online);
 
