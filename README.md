@@ -35,7 +35,7 @@ Este serviço é dividido em duas partes, usuário administrador e usuário padr
 	
 		routes.put('/user/online/:id', UserController.online);
 
-##### Banco de dados
+##### Banco de dados - sqlite3
 
 	Tabela: users {
 			id: int
@@ -54,3 +54,6 @@ Este serviço é dividido em duas partes, usuário administrador e usuário padr
 
 - ReactJs
 - Node
+- typeorm
+- sqlite3
+- typescript
