@@ -2,6 +2,14 @@
 
 Este serviço é dividido em duas partes, usuário administrador e usuário padrão, o deshbord do usuario padãro possui a função de informação sobre o usuario e sua edição, já o usuário administrador pode visualizar e editar todos os usuários cadastrados.
 
+### Tecnologias
+
+- ReactJs
+- Node
+- typeorm
+- sqlite3
+- typescript
+
 ### Front-end
 
 	git clone https://github.com/GustavoFortti/Case-Mind.git
@@ -50,10 +58,4 @@ Este serviço é dividido em duas partes, usuário administrador e usuário padr
 
 
 
-# Tecnologias
 
-- ReactJs
-- Node
-- typeorm
-- sqlite3
-- typescript
