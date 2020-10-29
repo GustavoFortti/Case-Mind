@@ -35,15 +35,6 @@ label {
     margin-bottom: 2.8rem;
 }
 
-#buttons {
-    margin-top: 3rem;
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-}
-
 #butUp {
     height: 3rem;
     width: 7rem;

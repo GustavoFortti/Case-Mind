@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
+import { CgArrowLongLeft, FiActivity } from "react-icons/cg";
 
 import './styles.css'
 
@@ -30,6 +31,10 @@ function Resgister() {
         history.push('/');
     }
 
+    const handleBack = () => {
+        history.goBack()
+    }
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -45,8 +50,9 @@ function Resgister() {
 
     return (
         <div id="page-register">
-            <header>
-                <h1>Register</h1>
+            <header id='head-back'>
+                <CgArrowLongLeft id="but-back" onClick={handleBack}/>
+                <h1 id='title'>Register</h1>
             </header>
             <form onSubmit={handleSubmit}>
                 <div className="field">
@@ -85,9 +91,11 @@ function Resgister() {
                         placeholder="Password"
                     />
                 </div>
-                <button type="submit" id="button">
-                    Create Account
-                </button>
+                <div id='buttons'>
+                    <button type="submit" id="but-register">
+                        Create Account
+                    </button>
+                </div>
             </form>            
         </div>
     );

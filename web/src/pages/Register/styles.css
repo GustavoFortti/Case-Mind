@@ -39,3 +39,26 @@ form div button {
     margin: 3rem 3rem;
 }
 
+#but-register {
+    margin-top: 0.5rem;
+    height: 3rem;
+    width: 7rem;
+}
+
+#but-back{
+    position: absolute;
+    height: 3rem;
+    top: 0.1rem;
+    left: 1rem;
+    width: 1.8rem;
+}
+
+#title {
+    margin-left: 9rem;
+    margin-right: 10rem;
+}
+
+#head-back {
+    display: flex;
+    justify-self: center;
+}
