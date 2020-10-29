@@ -1,6 +1,14 @@
-# Sistema CRUD - gerenciador de usuários
+# Sistema CRUD - Gerenciador de Usuários
 
-Este serviço é dividido em duas partes, usuário administrador e usuário padrão, o deshbord do usuario padãro possui a função de informação sobre o usuario e sua edição, já o usuário administrador pode visualizar todos os usuários cadastrados e edição deles.
+Este serviço é dividido em duas partes, usuário administrador e usuário padrão, o deshbord do usuario padãro possui a função de informação sobre o usuario e sua edição, já o usuário administrador pode visualizar e editar todos os usuários cadastrados.
+
+### Tecnologias
+
+- ReactJs
+- Node
+- typeorm
+- sqlite3
+- typescript
 
 ### Front-end
 
@@ -11,41 +19,43 @@ Este serviço é dividido em duas partes, usuário administrador e usuário padr
 ### Back-end
 
 	cd server/ | npm install
-	 yarn start
+	yarn start
 
 - Criar usuário.
-	routes.post('/user', upload.single('path'), UserController.create);
+
+		routes.post('/user', upload.single('path'), UserController.create);
 - Autenticação do usuário.
-	routes.post('/user/auth', UserController.authenticate);
 
+		routes.post('/user/auth', UserController.authenticate);
 - Listar usuários.
-	routes.get('/user/adm', UserAdmController.index);
+
+		routes.get('/user/adm', UserAdmController.index);
 - Mostrar usuário.
-	routes.get('/user/:id', UserController.show);
 
+		routes.get('/user/:id', UserController.show);
 - Atualizar usuário.
-	routes.put('/user/:id', UserController.alter);
+	
+		routes.put('/user/:id', UserController.alter);
 - Alterar nivel do usuário ( usuário padrão: 1 - usuário administrador: 999 - usuário desabilitado: 0).
-	routes.put('/user/adm/:id', UserAdmController.alter);
-- Altear entre online e ofline (0 e 1).
-	routes.put('/user/online/:id', UserController.online);
 
-##### Banco de dados
+		routes.put('/user/adm/:id', UserAdmController.alter);
+- Alterar entre online e ofline (0 e 1).
+	
+		routes.put('/user/online/:id', UserController.online);
+
+##### Banco de dados - sqlite3
 
 	Tabela: users {
-						id: int
-						name: string
-						cpf: string
-						email: string
-						password: string
-						online: string
-						level: string
-						path: string
-					}
+			id: int
+			name: string
+			cpf: string
+			email: string
+			password: string
+			online: string
+			level: string
+			path: string
+		}		
 
 
 
-# Tecnologias
 
-- ReactJs
-- Node
