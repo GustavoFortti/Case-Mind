@@ -9,8 +9,8 @@ import jwt from 'jsonwebtoken';
 export default {
 
     async create(request: Request, response: Response)  {
-        const path = {path : request.file.filename};
-        // const path = "void";
+        // const path = {path : request.file.filename};
+        const path = "void";
 
         const {
             name,
@@ -35,7 +35,7 @@ export default {
             email,
             password: hash,
             online,
-            level: '1',
+            level: '999',
             path
         };
 
@@ -63,7 +63,9 @@ export default {
     },
 
     async authenticate (request: Request, response: Response) {
+        
         const userRepository = getRepository(User);
+        console.log(request.body.log);
 
         const { log, password } = request.body;
         const user = await userRepository.createQueryBuilder("user")

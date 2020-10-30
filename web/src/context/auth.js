@@ -1,15 +1,26 @@
 import { createContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import * as auth from '../services/auth'
+import api from '../services/api'
 
-// const AuthContextData {
-    
-// };
+const AuthContext = createContext();
 
-const AuthContext = createContext({ signed: true });
+export const AuthProvider = ({ children }) => { 
 
-export const AuthProvider = ({ children }) => (
-    <AuthContext.Provider value={{signed: false}}>
-        {children}
-    </AuthContext.Provider>
-)
+
+    const singIn = async(data) => {
+        const response = await auth.logIn(data);
+
+        console.log(response);
+        return response;
+    };
+
+
+    return (
+        <AuthContext.Provider value={{signed: false, user: {}, singIn}}>
+            {children}
+        </AuthContext.Provider>
+    );
+};
 
 export default AuthContext;
