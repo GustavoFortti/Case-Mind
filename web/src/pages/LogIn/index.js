@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import { logIn } from '../../services/auth'
+import AuthContext from '../../context/auth'
 
 import './styles.css'
 
 function LogIn() {
 
-    const history = useHistory()
+    const history = useHistory();
+
+    const { signed } = useContext(AuthContext);
+    console.log(signed);
+    console.log("signed");
+
 
     function handleInputChange(event) {
         const { name, value } = event.target;
@@ -26,6 +32,7 @@ function LogIn() {
             localStorage.setItem('user', resp.data.user.id);
             api.put(`/user/online/${resp.data.user.id}`, {online: "0"})
             const data = resp.data.user.level;
+            const token = "jf942hjf984y3rf98735hqgf98u43gf"
             if(data === "1") {
                 return  history.push('/user/default')
             } else if(data === "999") {

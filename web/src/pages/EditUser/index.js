@@ -14,7 +14,7 @@ function EditUser() {
             setEmail(email)
             setCpf(cpf)
         })
-      }, []);
+    }, []);
     
     var [ name, setName ] = useState('');
     var [ email, setEmail ] = useState('');
